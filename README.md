@@ -4,6 +4,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Portfolio Status](https://img.shields.io/badge/status-live-brightgreen.svg)](https://gow1n-d.github.io/gowind_portfolio/)
+[![Resume PDF](https://img.shields.io/badge/Resume-PDF%20Download-success.svg)](resume.pdf)
 [![Open To Work](https://img.shields.io/badge/Open%20To%20Work-AI%20%26%20CV%20Roles-emerald.svg)](mailto:gowindbm48@gmail.com)
 
 ---
@@ -14,10 +15,11 @@ A modern, responsive, high-performance single-page portfolio website designed wi
 
 ### ✨ Key Features
 - **Curated Design & Visual Polish**: High-contrast, clean light theme with custom emerald green accents (`#16a34a`), smooth rounded cards (`border-radius: 22px`), and pill badges.
+- **Direct PDF Resume Access**: Download or preview the full official resume (`resume.pdf`) directly from the navbar, hero section, and contact card.
 - **Hero & Dynamic Typing**: Interactive role cycling (`AI Engineer`, `Computer Vision Developer`, `GenAI Developer`) with immediate recruiter action items.
 - **Circular Profile Avatar**: Modern circular portrait frame with static positioning and subtle glowing borders.
 - **Projects Showcase**: Deep dives into computer vision and GenAI projects including real-time video surveillance, defect detection, and multimodal LLM agents.
-- **Technical Skills Matrix**: Comprehensive categorization of languages (Python, C++, SQL), AI frameworks (PyTorch, TensorFlow, OpenCV, YOLO, MediaPipe), and MLOps tools.
+- **Technical Skills Matrix**: Comprehensive categorization of languages (Python, Java), AI frameworks (Flask, Streamlit, YOLOv8, OpenCV, MediaPipe, Pandas, NumPy, TensorFlow, Keras), Web technologies (React, REST APIs), and automation tools (n8n).
 - **Recruiter & ATS Magic Keywords Cloud**: Instant discovery of core engineering competencies for recruiters and hiring managers.
 - **Fully Responsive & Accessible**: Optimized for desktops, tablets, and mobile devices with smooth scroll-spy navigation.
 
@@ -55,6 +57,8 @@ To deploy this portfolio live for free via GitHub Pages:
 ## 📬 Contact & Connect
 
 - **Email**: [gowindbm48@gmail.com](mailto:gowindbm48@gmail.com)
+- **Phone**: [+91 9629088585](tel:+919629088585)
+- **Resume**: [Download Resume (PDF)](resume.pdf)
 - **GitHub**: [github.com/gow1n-d](https://github.com/gow1n-d)
 - **LinkedIn**: [linkedin.com/in/gowind-bm](https://www.linkedin.com/in/gowind-bm)
 

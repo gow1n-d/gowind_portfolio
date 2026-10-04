@@ -56,6 +56,8 @@
     .nav-links{display:flex;align-items:center;gap:0.25rem}
     .nav-links a{font-family:var(--font-b);font-size:0.84rem;font-weight:500;color:var(--text-muted);text-decoration:none;padding:0.4rem 0.85rem;border-radius:var(--r-pill);transition:all 0.15s}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);background:var(--accent-dim)}
+    .nav-resume{color:var(--accent)!important;font-weight:600!important;background:var(--accent-dim);display:inline-flex;align-items:center;gap:0.25rem}
+    .nav-resume:hover{background:rgba(22,163,74,0.18)!important}
     .nav-r{display:flex;align-items:center;gap:0.6rem}
     .hire-btn{font-family:var(--font-b);font-size:0.82rem;font-weight:600;background:var(--accent);color:#fff;padding:0.42rem 1.05rem;border-radius:var(--r-pill);text-decoration:none;transition:all 0.2s;border:1px solid var(--accent);display:inline-flex;align-items:center;gap:0.35rem;box-shadow:0 2px 10px var(--accent-glow)}
     .hire-btn:hover{background:var(--accent-dk);border-color:var(--accent-dk);transform:translateY(-1px);box-shadow:0 4px 14px var(--accent-glow)}
@@ -65,7 +67,7 @@
     /* Mobile menu */
     #mob-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.45);backdrop-filter:blur(4px);z-index:150}
     #mob-overlay.open{display:block}
-    #mob-menu{display:none;position:fixed;top:0;right:-100%;width:260px;height:100vh;background:#fff;border-left:1px solid var(--border);z-index:200;flex-direction:column;padding:1.5rem;gap:0.4rem;transition:right 0.25s ease}
+    #mob-menu{display:none;position:fixed;top:0;right:-100%;width:270px;height:100vh;background:#fff;border-left:1px solid var(--border);z-index:200;flex-direction:column;padding:1.5rem;gap:0.4rem;transition:right 0.25s ease}
     #mob-menu.open{right:0;display:flex}
     .mob-close{background:none;border:none;color:var(--text-muted);font-size:1.4rem;cursor:pointer;align-self:flex-end;margin-bottom:0.75rem;line-height:1}
     .mob-close:hover{color:var(--accent)}
@@ -77,7 +79,7 @@
     .btn-p:hover{background:var(--accent-dk);border-color:var(--accent-dk);box-shadow:0 6px 18px var(--accent-glow);transform:translateY(-2px)}
     .btn-o{display:inline-flex;align-items:center;gap:0.45rem;background:#fff;color:var(--text);font-family:var(--font-b);font-weight:600;font-size:0.86rem;padding:0.65rem 1.45rem;border-radius:var(--r-pill);border:1px solid var(--border);text-decoration:none;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
     .btn-o:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-2px);box-shadow:0 4px 12px var(--accent-glow)}
-    .btn-g{display:inline-flex;align-items:center;gap:0.45rem;background:var(--bg-sec);color:var(--text-muted);font-family:var(--font-b);font-weight:600;font-size:0.86rem;padding:0.65rem 1.45rem;border-radius:var(--r-pill);border:1px solid var(--border);text-decoration:none;cursor:pointer;transition:all 0.2s}
+    .btn-g{display:inline-flex;align-items:center;gap:0.45rem;background:var(--bg-sec);color:var(--text);font-family:var(--font-b);font-weight:600;font-size:0.86rem;padding:0.65rem 1.45rem;border-radius:var(--r-pill);border:1px solid var(--border);text-decoration:none;cursor:pointer;transition:all 0.2s}
     .btn-g:hover{color:var(--accent);border-color:var(--accent);background:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.05)}
 
     /* ===== ROUNDED CARDS (NO SQUARE BOXES) ===== */
@@ -274,6 +276,7 @@
     <a href="#projects" onclick="closeMob()">Projects</a>
     <a href="#achievements" onclick="closeMob()">Achievements</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
+    <a href="resume.pdf" target="_blank" onclick="closeMob()" style="color:var(--accent);font-weight:700">&darr; Resume (PDF)</a>
   </div>
 
   <!-- NAVBAR -->
@@ -291,6 +294,10 @@
         <a href="#projects" id="nl-proj">Projects</a>
         <a href="#achievements" id="nl-ach">Achievements</a>
         <a href="#contact" id="nl-contact">Contact</a>
+        <a href="resume.pdf" target="_blank" class="nav-resume" id="nl-resume" title="View &amp; Download Resume (PDF)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+          Resume
+        </a>
       </nav>
       <div class="nav-r">
         <a href="#contact" class="hire-btn">
@@ -331,7 +338,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
               Contact Me
             </a>
-            <a href="mailto:gowindbm48@gmail.com?subject=Resume%20Request%20-%20Gowind%20BM" class="btn-g" id="resume-btn" title="Request full PDF resume directly via email">
+            <a href="resume.pdf" target="_blank" download="Gowind_BM_Resume.pdf" class="btn-g" id="resume-btn" title="Download Gowind BM Resume (PDF)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
               Download Resume
             </a>
@@ -382,16 +389,16 @@
       <div class="about-grid">
         <div class="fi">
           <div class="card about-card">
-            <p class="about-text">I&apos;m a final-year B.Tech Artificial Intelligence and Data Science student at K.L.N. College of Engineering with a strong foundation in Python, Machine Learning, Deep Learning, and Computer Vision. I&apos;ve built real-time computer vision applications, GenAI-based tools, and AI-integrated apps through academic projects, internships, and research.</p>
-            <p class="about-text">I&apos;m currently exploring AI-based defect detection in additive manufacturing at IIT Jammu and want to apply intelligent technologies to real-world problems. My passion lies at the intersection of cutting-edge deep learning research and production-ready deployment.</p>
+            <p class="about-text">I&apos;m a final-year B.Tech Artificial Intelligence and Data Science student at K.L.N. College of Engineering with a strong foundation in Python, Machine Learning, Deep Learning, and Computer Vision. I&apos;ve built real-time computer vision applications, GenAI-based tools, and AI-integrated applications through academic projects, internships, and research.</p>
+            <p class="about-text">Currently exploring AI-based defect detection in additive manufacturing at IIT Jammu and eager to contribute to research and apply intelligent technologies to solve real-world problems. Experienced in developing end-to-end intelligent systems, autonomous agents, and production-ready ML pipelines.</p>
             <div class="fpills">
               <span class="fpill">Real-Time Object Detection</span>
-              <span class="fpill">Transformer Architectures</span>
               <span class="fpill">Computer Vision</span>
-              <span class="fpill">GenAI &amp; LLMs</span>
-              <span class="fpill">Edge AI Deployment</span>
-              <span class="fpill">MLOps Pipelines</span>
-              <span class="fpill">n8n Automation</span>
+              <span class="fpill">Deep Learning</span>
+              <span class="fpill">GenAI &amp; Autonomous Agents</span>
+              <span class="fpill">Edge AI Optimization</span>
+              <span class="fpill">Workflow Automation</span>
+              <span class="fpill">Additive Manufacturing AI</span>
             </div>
           </div>
         </div>
@@ -401,7 +408,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <div class="scard-v">8.0</div>
-            <div class="scard-l">CGPA (6th Sem)<br>KLNCE</div>
+            <div class="scard-l">CGPA (6th Sem)<br>KLNCE (Honors)</div>
           </div>
           <div class="card scard">
             <div class="scard-icon-wrap">
@@ -429,7 +436,7 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (MATCHING RESUME CATEGORIES) -->
   <section id="skills">
     <div class="con">
       <div class="sbadge">02. Skills</div>
@@ -482,16 +489,16 @@
         <div class="card sg fi">
           <div class="sg-title">
             <span class="sg-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="3" rx="4"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
             </span>
-            Developer Tools
+            Web Technologies
           </div>
           <div class="stags">
-            <span class="stag">Git</span>
-            <span class="stag">GitHub</span>
-            <span class="stag">VS Code</span>
-            <span class="stag">n8n</span>
-            <span class="stag">Postman</span>
+            <span class="stag">React</span>
+            <span class="stag">HTML</span>
+            <span class="stag">CSS</span>
+            <span class="stag">JavaScript</span>
+            <span class="stag">REST APIs</span>
           </div>
         </div>
         <div class="card sg fi d1">
@@ -499,27 +506,29 @@
             <span class="sg-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
             </span>
-            Databases
+            Databases &amp; Tools
           </div>
           <div class="stags">
-            <span class="stag">Firebase</span>
-            <span class="stag">MongoDB</span>
             <span class="stag">MySQL</span>
+            <span class="stag">MongoDB</span>
+            <span class="stag">Firebase</span>
+            <span class="stag">Git</span>
+            <span class="stag">Postman</span>
           </div>
         </div>
         <div class="card sg fi d2">
           <div class="sg-title">
             <span class="sg-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </span>
-            Soft Skills
+            Automation &amp; Integration
           </div>
           <div class="stags">
-            <span class="stag">Team Collaboration</span>
-            <span class="stag">Problem Solving</span>
-            <span class="stag">Adaptability</span>
-            <span class="stag">Leadership</span>
-            <span class="stag">Communication</span>
+            <span class="stag">n8n</span>
+            <span class="stag">Workflow Automation</span>
+            <span class="stag">API Integration</span>
+            <span class="stag">Autonomous Agents</span>
+            <span class="stag">MCPs</span>
           </div>
         </div>
       </div>
@@ -530,16 +539,16 @@
   <section id="experience">
     <div class="con">
       <div class="sbadge">03. Experience</div>
-      <h2 class="stitle">My <span>Journey</span></h2>
+      <h2 class="stitle">Professional <span>Experience</span></h2>
       <div class="timeline">
         <div class="titem fi">
           <div class="tdot"></div>
           <div class="card tcard">
             <div class="exp-hd"><div><div class="exp-t">Research Intern</div><div class="exp-c">IIT Jammu</div></div><span class="exp-dur">1 Month</span></div>
             <ul class="exp-pts">
-              <li>Researching in-situ defect detection in continuous carbon fiber reinforced 3D printing using AI/ML/DL</li>
-              <li>Developing computer vision algorithms for real-time quality assurance in additive manufacturing</li>
-              <li>Implementing deep learning models for automated inspection of 3D printed composite structures</li>
+              <li>Conducting research on in-situ defect detection in continuous carbon fiber reinforced 3D printing using advanced AI/ML/DL techniques.</li>
+              <li>Developing computer vision algorithms for real-time quality assurance and defect identification in additive manufacturing processes.</li>
+              <li>Implementing deep learning models for automated inspection and analysis of 3D printed composite structures.</li>
             </ul>
           </div>
         </div>
@@ -548,9 +557,8 @@
           <div class="card tcard">
             <div class="exp-hd"><div><div class="exp-t">GenAI Developer Intern</div><div class="exp-c">Dotcom Infoway</div></div><span class="exp-dur">1 Month</span></div>
             <ul class="exp-pts">
-              <li>Built responsive chatbots using GenAI with custom models</li>
-              <li>Created autonomous agents and MCPs in Python</li>
-              <li>Implemented real-time conversational AI to improve user engagement</li>
+              <li>Developed responsive chatbots using GenAI, creating custom models and building autonomous agents and MCPs using Python.</li>
+              <li>Implemented real-time conversational AI solutions for improved user engagement and interaction workflows.</li>
             </ul>
           </div>
         </div>
@@ -559,8 +567,8 @@
           <div class="card tcard">
             <div class="exp-hd"><div><div class="exp-t">Student Innovator</div><div class="exp-c">Innovation Research Park (IRP), KLNCE</div></div><span class="exp-dur">1 Year</span></div>
             <ul class="exp-pts">
-              <li>Developed Borrow Booksy, a book rental system for closed-gate communities using Flutter with GenAI features</li>
-              <li>Implemented intelligent recommendations and community-based resource management</li>
+              <li>Developed Borrow Booksy, a book rental system for closed-gate communities using Flutter frontend enhanced with GenAI capabilities.</li>
+              <li>Implemented intelligent recommendation features and community-based resource management.</li>
             </ul>
           </div>
         </div>
@@ -572,7 +580,7 @@
   <section id="projects">
     <div class="con">
       <div class="sbadge">04. Projects</div>
-      <h2 class="stitle">What I&apos;ve <span>Built</span></h2>
+      <h2 class="stitle">Key <span>Projects</span></h2>
       <div class="fbar" role="group" aria-label="Project filters">
         <button class="fbtn active" onclick="filterP('all',this)" id="f-all">All</button>
         <button class="fbtn" onclick="filterP('cv',this)" id="f-cv">Computer Vision</button>
@@ -583,41 +591,41 @@
         <div class="card pcard fi" data-cat="cv" id="p1">
           <span class="pcat">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            Computer Vision
+            Computer Vision &bull; IIT Jammu
           </span>
           <h3 class="ptitle">In-Situ Defect Detection in Carbon Fiber 3D Printing</h3>
-          <p class="pdesc">Real-time defect detection and classification using computer vision and deep learning, with research on model optimization for edge-device deployment in industrial 3D printing. Conducted at IIT Jammu.</p>
-          <div class="ttags"><span class="ttag">Python</span><span class="ttag">Deep Learning</span><span class="ttag">Computer Vision</span><span class="ttag">Edge AI</span></div>
+          <p class="pdesc">Developing AI/ML/DL models for real-time defect detection in continuous carbon fiber reinforced 3D printing. Implementing computer vision algorithms with deep learning for automated quality assurance and defect classification in additive manufacturing. Conducting research on model optimization for edge-device deployment.</p>
+          <div class="ttags"><span class="ttag">Python</span><span class="ttag">Deep Learning</span><span class="ttag">Computer Vision</span><span class="ttag">Edge AI</span><span class="ttag">IIT Jammu</span></div>
           <div><a href="https://github.com/gow1n-d" target="_blank" rel="noopener" class="ghbtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg> GitHub &rarr;</a></div>
         </div>
         <div class="card pcard fi d1" data-cat="genai" id="p2">
           <span class="pcat">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
-            GenAI
+            GenAI &bull; Own Project
           </span>
           <h3 class="ptitle">Research Paper Generator</h3>
-          <p class="pdesc">An AI tool that generates research papers in multiple layouts for journals and conferences, with a built-in plagiarism checker and humanizer. Significantly reduces academic writing time.</p>
-          <div class="ttags"><span class="ttag">Python</span><span class="ttag">GenAI</span><span class="ttag">NLP</span></div>
+          <p class="pdesc">Developed an AI tool that generates research papers across diverse layouts, journals, and academic conferences. Equipped with an integrated plagiarism checker and humanizer module to generate publications with high efficiency and academic rigor.</p>
+          <div class="ttags"><span class="ttag">Python</span><span class="ttag">GenAI</span><span class="ttag">NLP</span><span class="ttag">Plagiarism Checker</span><span class="ttag">Humanizer</span></div>
           <div><a href="https://github.com/gow1n-d" target="_blank" rel="noopener" class="ghbtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg> GitHub &rarr;</a></div>
         </div>
         <div class="card pcard fi d2" data-cat="web" id="p3">
           <span class="pcat">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="18" x="3" y="3" rx="4"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-            Web / Mobile
+            Mobile &amp; GenAI &bull; IRP KLNCE
           </span>
           <h3 class="ptitle">Borrow Booksy — Community Book Rental</h3>
-          <p class="pdesc">A mobile-first rental platform for closed-gate communities with GenAI book recommendations, user authentication, inventory management, and rental analytics. Published in IJCOT.</p>
-          <div class="ttags"><span class="ttag">Flutter</span><span class="ttag">GenAI</span><span class="ttag">Firebase</span></div>
+          <p class="pdesc">Developed a mobile-first book rental platform for closed-gate communities using Flutter. Integrated GenAI for intelligent book recommendations and automated resource distribution. Implemented user authentication, inventory management, and rental analytics. Published in IJCOT.</p>
+          <div class="ttags"><span class="ttag">Flutter</span><span class="ttag">GenAI</span><span class="ttag">Firebase</span><span class="ttag">IJCOT Journal</span></div>
           <div><a href="https://github.com/gow1n-d" target="_blank" rel="noopener" class="ghbtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg> GitHub &rarr;</a></div>
         </div>
         <div class="card pcard fi d3" data-cat="cv" id="p4">
           <span class="pcat">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            Computer Vision
+            Computer Vision &bull; IPC Project
           </span>
           <h3 class="ptitle">Real-Time Crowd Surveillance (IPC Project)</h3>
-          <p class="pdesc">An ML surveillance system for person detection in crowded environments using YOLOv8. Designed for real-time security and monitoring applications with high accuracy and low latency.</p>
-          <div class="ttags"><span class="ttag">YOLOv8</span><span class="ttag">OpenCV</span><span class="ttag">Python</span></div>
+          <p class="pdesc">Selected for IPC Project: Developed real-time ML surveillance system using YOLOv8 and OpenCV for person detection in crowded environments, demonstrating advanced computer vision applications with low inference latency.</p>
+          <div class="ttags"><span class="ttag">YOLOv8</span><span class="ttag">OpenCV</span><span class="ttag">Python</span><span class="ttag">IPC Selection</span></div>
           <div><a href="https://github.com/gow1n-d" target="_blank" rel="noopener" class="ghbtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg> GitHub &rarr;</a></div>
         </div>
       </div>
@@ -627,7 +635,7 @@
   <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="con">
-      <div class="sbadge">05. Achievements</div>
+      <div class="sbadge">05. Achievements &amp; Leadership</div>
       <h2 class="stitle">Recognition &amp; <span>Milestones</span></h2>
       <div class="agrid">
         <div class="card acard fi">
@@ -636,7 +644,7 @@
           </div>
           <div>
             <div class="atitle">Research Paper Published — IJCOT</div>
-            <div class="adesc">Published peer-reviewed research on &ldquo;Borrow Booksy: AI-Enhanced Community Book Rental System&rdquo; in the International Journal of Computer and Organization Trends.</div>
+            <div class="adesc">Published research on Borrow Booksy &ndash; AI-Enhanced Community Book Rental System in IJCOT (International Journal of Computer Science and Technology), demonstrating expertise in AI integration with real-world applications.</div>
           </div>
         </div>
         <div class="card acard fi d1">
@@ -645,7 +653,7 @@
           </div>
           <div>
             <div class="atitle">Selected for IPC Project</div>
-            <div class="adesc">Chosen for the prestigious IPC Project implementing real-time ML-based surveillance with YOLOv8 and OpenCV for person detection in crowded environments.</div>
+            <div class="adesc">Developed real-time ML surveillance system using YOLOv8 and OpenCV for person detection in crowded environments, demonstrating advanced computer vision applications.</div>
           </div>
         </div>
         <div class="card acard fi d2">
@@ -654,7 +662,7 @@
           </div>
           <div>
             <div class="atitle">Student Coordinator — AISTHETICA Symposium 2k26</div>
-            <div class="adesc">Led a flagship AI &amp; DS symposium with 5 activities, managed cross-functional teams, and coordinated logistics for 100+ participants at KLNCE.</div>
+            <div class="adesc">Led the flagship AI &amp; Data Science event with 5 engaging activities, managed cross-functional teams, and coordinated logistics for a successful departmental symposium.</div>
           </div>
         </div>
       </div>
@@ -671,7 +679,7 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
         <div>
-          <div class="edu-deg">B.Tech Artificial Intelligence &amp; Data Science (Honors)</div>
+          <div class="edu-deg">B.Tech &ndash; Artificial Intelligence and Data Science (Honors)</div>
           <div class="edu-col">K.L.N. College of Engineering, Sivagangai</div>
           <div class="edu-meta">
             <span class="edu-mi">
@@ -711,6 +719,12 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div><div class="citem-label">Phone</div><a href="tel:+919629088585" class="citem-val" style="color:var(--text);text-decoration:none">+91 9629088585</a></div>
+          </div>
+          <div class="card citem">
+            <div class="citem-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+            </div>
+            <div><div class="citem-label">Official Resume</div><a href="resume.pdf" target="_blank" download="Gowind_BM_Resume.pdf" class="citem-val" style="color:var(--accent);text-decoration:none;font-weight:700">Download Gowind_BM_Resume.pdf &darr;</a></div>
           </div>
           <div class="card citem">
             <div class="citem-icon-wrap">
