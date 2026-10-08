@@ -144,6 +144,7 @@
     .stags{display:flex;flex-wrap:wrap;gap:0.4rem}
     .stag{font-family:var(--font-m);font-size:0.68rem;font-weight:500;background:var(--bg-sec);border:1px solid var(--border);color:var(--text-muted);padding:0.25rem 0.68rem;border-radius:var(--r-pill);transition:all 0.15s;cursor:default}
     .stag:hover{border-color:rgba(22,163,74,0.45);color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
+    .stag.highlight{color:var(--accent-dk);background:var(--accent-dim);border-color:rgba(22,163,74,0.35);font-weight:600}
 
     /* ===== EXPERIENCE TIMELINE ===== */
     .timeline{position:relative;margin-top:0.4rem}
@@ -419,6 +420,10 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
                 GenAI
               </span>
+              <span class="fbadge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Vibecoding
+              </span>
             </div>
           </div>
         </div>
@@ -441,6 +446,7 @@
               <span class="fpill">Computer Vision</span>
               <span class="fpill">Deep Learning</span>
               <span class="fpill">GenAI &amp; Autonomous Agents</span>
+              <span class="fpill">Vibecoding &amp; Agentic AI</span>
               <span class="fpill">Edge AI Optimization</span>
               <span class="fpill">Workflow Automation</span>
               <span class="fpill">Additive Manufacturing AI</span>
@@ -566,14 +572,17 @@
             <span class="sg-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </span>
-            Automation &amp; Integration
+            Automation &amp; Vibecoding
           </div>
           <div class="stags">
-            <span class="stag">n8n</span>
-            <span class="stag">Workflow Automation</span>
-            <span class="stag">API Integration</span>
+            <span class="stag highlight">&#10024; Vibecoding</span>
+            <span class="stag highlight">Agentic AI</span>
+            <span class="stag">n8n Automation</span>
+            <span class="stag">MCP Protocols</span>
             <span class="stag">Autonomous Agents</span>
-            <span class="stag">MCPs</span>
+            <span class="stag">Prompt Engineering</span>
+            <span class="stag">API Integration</span>
+            <span class="stag">Workflow Automation</span>
           </div>
         </div>
       </div>
@@ -829,7 +838,7 @@
       <div class="philosophy-card fi">
         <div class="philosophy-badge">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          ENGINEERING PHILOSOPHY &middot; AUTOMATION FIRST
+          ENGINEERING PHILOSOPHY &middot; VIBECODING &amp; AUTOMATION FIRST
         </div>
         
         <h2 class="philosophy-quote">
@@ -837,30 +846,30 @@
         </h2>
         
         <p class="philosophy-lead">
-          I refuse to spend time doing repetitive work manually when I can build an intelligent system, train an AI model, or write a clean pipeline to do it for me. That &ldquo;laziness&rdquo; is the ultimate driving force behind high-leverage engineering: writing clean, modular code, deploying autonomous agents, and building scalable systems that do the heavy lifting.
+          Why spend hours grinding repetitive boilerplate manually when you can <strong>vibecode</strong>, steer intelligent AI agents, and train models to do the heavy lifting? That &ldquo;laziness&rdquo; is the ultimate catalyst for high-leverage engineering: rapid prototyping, relentless automation, and building scalable systems that deliver 10x impact.
         </p>
 
         <div class="philosophy-pillars">
           <div class="p-pillar">
             <div class="p-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="p-pillar-title">Vibecoding &amp; 10x Speed</div>
+            <div class="p-pillar-desc">Pair-programming with cutting-edge LLMs and agentic tools to translate ideas into production code at lightning speed.</div>
+          </div>
+          <div class="p-pillar">
+            <div class="p-pillar-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             </div>
             <div class="p-pillar-title">Automate Ruthlessly</div>
-            <div class="p-pillar-desc">If a task is performed twice, it gets scripted. If it requires cognitive effort, an AI agent takes over.</div>
+            <div class="p-pillar-desc">If a task is performed twice, it gets scripted. If it requires cognitive effort, an autonomous agent takes over.</div>
           </div>
           <div class="p-pillar">
             <div class="p-pillar-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             </div>
             <div class="p-pillar-title">High-Leverage AI</div>
-            <div class="p-pillar-desc">Channeling energy into building computer vision models and GenAI systems that solve real-world problems.</div>
-          </div>
-          <div class="p-pillar">
-            <div class="p-pillar-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 2.5h3L11 9h3l-5 7 1-4.5H7L9 2z"/></svg>
-            </div>
-            <div class="p-pillar-title">Simplicity Over Toil</div>
-            <div class="p-pillar-desc">Elegant, maintainable solutions over brute-force hours. Maximizing impact with zero wasted motion.</div>
+            <div class="p-pillar-desc">Deploying computer vision and GenAI systems that solve real-world problems with elegance and minimal friction.</div>
           </div>
         </div>
 
@@ -956,7 +965,7 @@
     function closeMob(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('mob-overlay').classList.remove('open');document.body.style.overflow='';}
 
     // Typing animation
-    const roles=['AI Engineer','Computer Vision Developer','GenAI Developer'];
+    const roles=['AI Engineer','Computer Vision Developer','GenAI Developer','Vibecoding & Agentic Specialist'];
     let ri=0,ci=0,del=false;
     const tel=document.getElementById('typed');
     function type(){

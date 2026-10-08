@@ -16,11 +16,11 @@ A modern, responsive, high-performance single-page portfolio website designed wi
 ### ✨ Key Features
 - **Curated Design & Visual Polish**: High-contrast, clean light theme with custom emerald green accents (`#16a34a`), smooth rounded cards (`border-radius: 22px`), and pill badges.
 - **Direct PDF Resume Access**: Download or preview the full official resume (`resume.pdf`) directly from the navbar, hero section, and contact card.
-- **Hero & Dynamic Typing**: Interactive role cycling (`AI Engineer`, `Computer Vision Developer`, `GenAI Developer`) with immediate recruiter action items.
+- **Hero & Dynamic Typing**: Interactive role cycling (`AI Engineer`, `Computer Vision Developer`, `GenAI Developer`, `Vibecoding & Agentic Specialist`) with immediate recruiter action items.
 - **Circular Profile Avatar**: Modern circular portrait frame with static positioning and subtle glowing borders.
 - **Projects Showcase**: Deep dives into computer vision and GenAI projects including real-time video surveillance, defect detection, and multimodal LLM agents.
-- **Technical Skills Matrix**: Comprehensive categorization of languages (Python, Java), AI frameworks (Flask, Streamlit, YOLOv8, OpenCV, MediaPipe, Pandas, NumPy, TensorFlow, Keras), Web technologies (React, REST APIs), and automation tools (n8n).
-- **Engineering Philosophy & In-Browser Resume Preview**: Showcasing an automation-first mindset ("My strength is my laziness") paired with an instant in-browser modal preview and direct download options for the official resume.
+- **Technical Skills Matrix**: Comprehensive categorization of languages (Python, Java), AI frameworks (Flask, Streamlit, YOLOv8, OpenCV, MediaPipe, Pandas, NumPy, TensorFlow, Keras), Vibecoding & Automation (Agentic AI, n8n, MCPs, Prompt Engineering), and Web technologies (React, REST APIs).
+- **Engineering Philosophy & In-Browser Resume Preview**: Showcasing a vibecoding & automation-first mindset ("My strength is my laziness") paired with an instant in-browser modal preview and direct download options for the official resume.
 - **Fully Responsive & Accessible**: Optimized for desktops, tablets, and mobile devices with smooth scroll-spy navigation.
 
 ---
