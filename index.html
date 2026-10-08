@@ -212,15 +212,55 @@
     .smsg{display:none;background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.3);color:var(--accent-dk);padding:0.75rem;border-radius:var(--r-sm);text-align:center;font-size:0.85rem;margin-top:0.6rem;font-weight:600}
     .smsg.show{display:block}
 
-    /* ===== ATS / RECRUITER KEYWORDS SECTION ===== */
-    #ats-keywords{padding:2.2rem 0;background:var(--bg-white);border-top:2px solid var(--accent)}
-    .ats-inner{text-align:center}
-    .ats-title{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;display:inline-flex;align-items:center;gap:0.4rem}
-    .ats-subtitle{font-family:var(--font-m);font-size:0.7rem;color:var(--text-dim);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.15rem}
-    .ats-cloud{display:flex;flex-wrap:wrap;gap:0.45rem;justify-content:center;max-width:940px;margin:0 auto}
-    .ats-kw{font-family:var(--font-b);font-size:0.8rem;font-weight:500;color:var(--text-muted);background:var(--bg-sec);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:var(--r-pill);transition:all 0.15s}
-    .ats-kw:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim)}
-    .ats-kw.highlight{color:var(--accent-dk);background:var(--accent-dim);border-color:rgba(22,163,74,0.35);font-weight:600;display:inline-flex;align-items:center;gap:0.3rem}
+    /* ===== ENGINEERING PHILOSOPHY SECTION ("MY STRENGTH IS MY LAZINESS") ===== */
+    #philosophy{padding:3.2rem 0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg-card) 100%);border-top:2px solid var(--accent)}
+    .philosophy-card{background:linear-gradient(135deg,rgba(255,255,255,0.96),rgba(240,253,244,0.75));border:1px solid rgba(22,163,74,0.25);border-radius:var(--r-card);padding:2.75rem 2rem;text-align:center;box-shadow:0 12px 36px -6px rgba(22,163,74,0.1),0 4px 16px rgba(15,23,42,0.03);position:relative;overflow:hidden}
+    .philosophy-badge{display:inline-flex;align-items:center;gap:0.45rem;background:var(--accent-dim);color:var(--accent-dk);font-family:var(--font-m);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.35rem 0.95rem;border-radius:var(--r-pill);border:1px solid rgba(22,163,74,0.3);margin-bottom:1rem}
+    .philosophy-quote{font-family:var(--font-h);font-size:clamp(1.75rem,3.4vw,2.55rem);font-weight:800;color:var(--text);letter-spacing:-0.03em;line-height:1.2;margin-bottom:0.95rem}
+    .philosophy-quote .highlight-text{background:linear-gradient(120deg,var(--accent),#15803d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:underline;text-decoration-color:rgba(22,163,74,0.35);text-underline-offset:6px}
+    .philosophy-lead{font-family:var(--font-b);font-size:1.02rem;color:var(--text-muted);max-width:760px;margin:0 auto 2rem;line-height:1.75}
+    .philosophy-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:920px;margin:0 auto 2.25rem;text-align:left}
+    .p-pillar{background:#fff;border:1px solid var(--border);border-radius:var(--r-sm);padding:1.35rem 1.25rem;transition:all 0.25s ease;display:flex;flex-direction:column;gap:0.45rem}
+    .p-pillar:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 24px -4px rgba(22,163,74,0.15)}
+    .p-pillar-icon{width:40px;height:40px;border-radius:12px;background:var(--accent-dim);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin-bottom:0.25rem}
+    .p-pillar-title{font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--text)}
+    .p-pillar-desc{font-size:0.84rem;color:var(--text-muted);line-height:1.55}
+    .philosophy-actions{display:flex;align-items:center;justify-content:center;gap:0.85rem;flex-wrap:wrap}
+
+    /* ===== RESUME PREVIEW MODAL ===== */
+    .resume-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:1.25rem;opacity:0;transition:opacity 0.25s ease}
+    .resume-modal.active{display:flex;opacity:1}
+    .resume-modal-backdrop{position:absolute;inset:0;background:rgba(15,23,42,0.68);backdrop-filter:blur(8px)}
+    .resume-modal-container{position:relative;width:100%;max-width:960px;height:90vh;max-height:860px;background:#ffffff;border-radius:20px;border:1px solid rgba(22,163,74,0.25);box-shadow:0 25px 60px -15px rgba(0,0,0,0.35);display:flex;flex-direction:column;overflow:hidden;transform:scale(0.96);transition:transform 0.25s cubic-bezier(0.16,1,0.3,1);z-index:1}
+    .resume-modal.active .resume-modal-container{transform:scale(1)}
+    .resume-modal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;background:#ffffff;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap}
+    .resume-modal-title-wrap{display:flex;flex-direction:column;gap:0.15rem}
+    .resume-modal-badge{display:inline-flex;align-items:center;gap:0.35rem;font-family:var(--font-m);font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.04em}
+    .resume-modal-title{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:var(--text);margin:0}
+    .resume-modal-sub{font-size:0.75rem;color:var(--text-dim);font-family:var(--font-m)}
+    .resume-modal-actions{display:flex;align-items:center;gap:0.55rem}
+    .rm-btn{display:inline-flex;align-items:center;gap:0.35rem;font-family:var(--font-b);font-size:0.8rem;font-weight:600;padding:0.42rem 0.95rem;border-radius:var(--r-pill);text-decoration:none;transition:all 0.18s;cursor:pointer;border:1px solid transparent}
+    .rm-btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px var(--accent-glow)}
+    .rm-btn-primary:hover{background:var(--accent-dk);transform:translateY(-1px)}
+    .rm-btn-secondary{background:var(--bg-sec);color:var(--text);border-color:var(--border)}
+    .rm-btn-secondary:hover{background:#fff;border-color:var(--accent);color:var(--accent)}
+    .rm-btn-close{width:36px;height:36px;border-radius:50%;background:var(--bg-sec);border:1px solid var(--border);color:var(--text-muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.25rem;transition:all 0.18s;line-height:1}
+    .rm-btn-close:hover{background:rgba(239,68,68,0.1);color:#ef4444;border-color:rgba(239,68,68,0.3)}
+    .resume-modal-body{flex:1;position:relative;background:#f8fafc;display:flex;flex-direction:column;overflow:hidden}
+    .resume-frame{width:100%;height:100%;border:none;flex:1;background:#fff}
+    .resume-fallback-bar{padding:0.55rem 1rem;background:#ffffff;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:0.6rem;font-size:0.75rem;color:var(--text-dim);flex-wrap:wrap}
+    .resume-fallback-bar a{color:var(--accent);text-decoration:none;font-weight:600}
+    .resume-fallback-bar a:hover{text-decoration:underline}
+
+    @media(max-width:768px){
+      .philosophy-pillars{grid-template-columns:1fr}
+      .philosophy-card{padding:1.8rem 1.25rem}
+      .resume-modal{padding:0.5rem}
+      .resume-modal-container{height:96vh;max-height:none;border-radius:14px}
+      .resume-modal-header{padding:0.75rem 1rem}
+      .rm-btn span{display:none}
+      .rm-btn{padding:0.42rem 0.65rem}
+    }
 
     /* ===== FOOTER ===== */
     footer{padding:1.15rem 0;border-top:1px solid var(--border);background:var(--bg-white)}
@@ -233,7 +273,7 @@
     /* ===== FADE-IN ===== */
     .fi{opacity:0;transform:translateY(16px);transition:opacity 0.45s ease,transform 0.45s ease}
     .fi.v{opacity:1;transform:translateY(0)}
-    .fi.d1{transition-delay:0.06s}.fi.d2{transition-delay:0.12s}.fi.d3{transition-delay:0.18s}
+    .fi.d1{transition-delay:0.06s}.fi.d2{transition-delay:0.12s}.fi.d3{transition-delay:0.18s}.fi.d4{transition-delay:0.24s}
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:900px){
@@ -276,7 +316,8 @@
     <a href="#projects" onclick="closeMob()">Projects</a>
     <a href="#achievements" onclick="closeMob()">Achievements</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
-    <a href="resume.pdf" target="_blank" onclick="closeMob()" style="color:var(--accent);font-weight:700">&darr; Resume (PDF)</a>
+    <a href="javascript:void(0)" onclick="closeMob();openResumeModal()" style="color:var(--accent);font-weight:700">&#x1F441; Preview Resume</a>
+    <a href="resume.pdf" download="Gowind_BM_Resume.pdf" onclick="closeMob()" style="color:var(--text-muted);font-size:0.88rem">&darr; Download PDF</a>
   </div>
 
   <!-- NAVBAR -->
@@ -294,9 +335,9 @@
         <a href="#projects" id="nl-proj">Projects</a>
         <a href="#achievements" id="nl-ach">Achievements</a>
         <a href="#contact" id="nl-contact">Contact</a>
-        <a href="resume.pdf" target="_blank" class="nav-resume" id="nl-resume" title="View &amp; Download Resume (PDF)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
-          Resume
+        <a href="javascript:void(0)" onclick="openResumeModal()" class="nav-resume" id="nl-resume" title="Preview &amp; Download Resume (PDF)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Resume Preview
         </a>
       </nav>
       <div class="nav-r">
@@ -334,13 +375,17 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
               View Projects
             </a>
-            <a href="#contact" class="btn-o" id="contact-me-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
-              Contact Me
-            </a>
-            <a href="resume.pdf" target="_blank" download="Gowind_BM_Resume.pdf" class="btn-g" id="resume-btn" title="Download Gowind BM Resume (PDF)">
+            <button type="button" onclick="openResumeModal()" class="btn-g" id="preview-resume-hero" title="Preview Resume in browser">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              Preview Resume
+            </button>
+            <a href="resume.pdf" target="_blank" download="Gowind_BM_Resume.pdf" class="btn-o" id="resume-btn" title="Download Gowind BM Resume (PDF)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
               Download Resume
+            </a>
+            <a href="#contact" class="btn-g" id="contact-me-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+              Contact Me
             </a>
           </div>
           <div class="hsocials">
@@ -645,6 +690,7 @@
           <div>
             <div class="atitle">Research Paper Published — IJCOT</div>
             <div class="adesc">Published research on Borrow Booksy &ndash; AI-Enhanced Community Book Rental System in IJCOT (International Journal of Computer Science and Technology), demonstrating expertise in AI integration with real-world applications.</div>
+            <div class="ttags" style="margin-top:0.45rem"><span class="ttag">IJCOT Journal</span><span class="ttag">Published Author</span><span class="ttag">GenAI &amp; ML</span></div>
           </div>
         </div>
         <div class="card acard fi d1">
@@ -654,15 +700,37 @@
           <div>
             <div class="atitle">Selected for IPC Project</div>
             <div class="adesc">Developed real-time ML surveillance system using YOLOv8 and OpenCV for person detection in crowded environments, demonstrating advanced computer vision applications.</div>
+            <div class="ttags" style="margin-top:0.45rem"><span class="ttag">IPC Selection</span><span class="ttag">YOLOv8</span><span class="ttag">Computer Vision</span></div>
           </div>
         </div>
         <div class="card acard fi d2">
+          <div class="aicon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <div class="atitle">Event President — Tensora 2k26 Hackathon</div>
+            <div class="adesc">Led as Event President for Tensora 2k26, a 24-hour hackathon conducted by the Department of Artificial Intelligence and Data Science (AI &amp; DS) with 80 participants. Formulated hackathon challenge tracks, mentored developer teams, and managed evaluation proceedings.</div>
+            <div class="ttags" style="margin-top:0.45rem"><span class="ttag">Event President</span><span class="ttag">AI &amp; DS Dept</span><span class="ttag">80 Participants</span><span class="ttag">Hackathon</span></div>
+          </div>
+        </div>
+        <div class="card acard fi d3">
+          <div class="aicon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="atitle">Event Vice President — TechGenio 2k26</div>
+            <div class="adesc">Served as Event Vice President for TechGenio 2k26, a premier technical event organized collaboratively by the Industry Institute Partnership Cell (IIPC) and Innovation Research Park (IRP) with 233 participants. Directed operations, institutional outreach, and event execution.</div>
+            <div class="ttags" style="margin-top:0.45rem"><span class="ttag">Event Vice President</span><span class="ttag">IIPC &amp; IRP</span><span class="ttag">233 Participants</span><span class="ttag">Technical Event</span></div>
+          </div>
+        </div>
+        <div class="card acard fi d4">
           <div class="aicon-wrap">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
           </div>
           <div>
             <div class="atitle">Student Coordinator — AISTHETICA Symposium 2k26</div>
             <div class="adesc">Led the flagship AI &amp; Data Science event with 5 engaging activities, managed cross-functional teams, and coordinated logistics for a successful departmental symposium.</div>
+            <div class="ttags" style="margin-top:0.45rem"><span class="ttag">Student Coordinator</span><span class="ttag">AI &amp; DS Dept</span><span class="ttag">5 Activities</span><span class="ttag">Symposium</span></div>
           </div>
         </div>
       </div>
@@ -755,60 +823,101 @@
     </div>
   </section>
 
-  <!-- ===== ATS KEYWORDS — MAGIC SECTION FOR RECRUITERS ===== -->
-  <section id="ats-keywords" aria-label="Skills and Keywords for Recruiters">
+  <!-- ===== ENGINEERING PHILOSOPHY SECTION ("MY STRENGTH IS MY LAZINESS") ===== -->
+  <section id="philosophy" class="philosophy-section" aria-label="Engineering Philosophy &bull; My Strength is My Laziness">
     <div class="con">
-      <div class="ats-inner">
-        <div class="ats-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
-          Magic Keywords for Recruiters &amp; ATS
+      <div class="philosophy-card fi">
+        <div class="philosophy-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          ENGINEERING PHILOSOPHY &middot; AUTOMATION FIRST
         </div>
-        <div class="ats-subtitle">Core Competencies &middot; Technical Stack &middot; Candidate Profile</div>
-        <div class="ats-cloud">
-          <span class="ats-kw highlight">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
-            AI &amp; Computer Vision Engineer
-          </span>
-          <span class="ats-kw highlight">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
-            Open to Work
-          </span>
-          <span class="ats-kw highlight">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
-            Immediate Joiner
-          </span>
-          <span class="ats-kw highlight">Machine Learning Engineer</span>
-          <span class="ats-kw highlight">Deep Learning Engineer</span>
-          <span class="ats-kw highlight">GenAI Developer</span>
-          <span class="ats-kw highlight">Computer Vision Developer</span>
-          <span class="ats-kw">Python Developer</span>
-          <span class="ats-kw">Data Science Intern</span>
-          <span class="ats-kw">AI Research Intern</span>
-          <span class="ats-kw">YOLOv8</span>
-          <span class="ats-kw">OpenCV</span>
-          <span class="ats-kw">TensorFlow</span>
-          <span class="ats-kw">PyTorch</span>
-          <span class="ats-kw">Keras</span>
-          <span class="ats-kw">MediaPipe</span>
-          <span class="ats-kw">Object Detection</span>
-          <span class="ats-kw">Real-Time Inference</span>
-          <span class="ats-kw">Edge AI Deployment</span>
-          <span class="ats-kw">MLOps Pipelines</span>
-          <span class="ats-kw">LLMs &amp; Transformers</span>
-          <span class="ats-kw">Autonomous Agents</span>
-          <span class="ats-kw">n8n Automation</span>
-          <span class="ats-kw">Flask &amp; Streamlit</span>
-          <span class="ats-kw">React</span>
-          <span class="ats-kw">Firebase</span>
-          <span class="ats-kw">MongoDB &amp; MySQL</span>
-          <span class="ats-kw">REST APIs</span>
-          <span class="ats-kw">Git &amp; GitHub</span>
-          <span class="ats-kw">IIT Jammu Research</span>
-          <span class="ats-kw">Published Researcher</span>
+        
+        <h2 class="philosophy-quote">
+          &ldquo;My strength is my <span class="highlight-text">laziness</span>.&rdquo;
+        </h2>
+        
+        <p class="philosophy-lead">
+          I refuse to spend time doing repetitive work manually when I can build an intelligent system, train an AI model, or write a clean pipeline to do it for me. That &ldquo;laziness&rdquo; is the ultimate driving force behind high-leverage engineering: writing clean, modular code, deploying autonomous agents, and building scalable systems that do the heavy lifting.
+        </p>
+
+        <div class="philosophy-pillars">
+          <div class="p-pillar">
+            <div class="p-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div class="p-pillar-title">Automate Ruthlessly</div>
+            <div class="p-pillar-desc">If a task is performed twice, it gets scripted. If it requires cognitive effort, an AI agent takes over.</div>
+          </div>
+          <div class="p-pillar">
+            <div class="p-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="p-pillar-title">High-Leverage AI</div>
+            <div class="p-pillar-desc">Channeling energy into building computer vision models and GenAI systems that solve real-world problems.</div>
+          </div>
+          <div class="p-pillar">
+            <div class="p-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 2.5h3L11 9h3l-5 7 1-4.5H7L9 2z"/></svg>
+            </div>
+            <div class="p-pillar-title">Simplicity Over Toil</div>
+            <div class="p-pillar-desc">Elegant, maintainable solutions over brute-force hours. Maximizing impact with zero wasted motion.</div>
+          </div>
+        </div>
+
+        <div class="philosophy-actions">
+          <button type="button" class="btn-p" onclick="openResumeModal()" id="preview-resume-philosophy">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Preview My Resume
+          </button>
+          <a href="resume.pdf" target="_blank" download="Gowind_BM_Resume.pdf" class="btn-o" id="download-resume-philosophy">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+            Download Resume (PDF)
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- RESUME PREVIEW MODAL -->
+  <div id="resume-modal" class="resume-modal" role="dialog" aria-modal="true" aria-label="Resume Preview Modal" tabindex="-1">
+    <div class="resume-modal-backdrop" onclick="closeResumeModal()"></div>
+    <div class="resume-modal-container">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title-wrap">
+          <div class="resume-modal-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Resume Preview
+          </div>
+          <h3 class="resume-modal-title">Gowind BM &mdash; Resume</h3>
+          <span class="resume-modal-sub">AI &amp; Computer Vision Engineer &bull; B.Tech AI &amp; DS</span>
+        </div>
+        <div class="resume-modal-actions">
+          <a href="resume.pdf" target="_blank" rel="noopener" class="rm-btn rm-btn-secondary" title="Open in New Tab">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Open Fullscreen</span>
+          </a>
+          <a href="resume.pdf" download="Gowind_BM_Resume.pdf" class="rm-btn rm-btn-primary" title="Download PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+          <button type="button" class="rm-btn-close" onclick="closeResumeModal()" aria-label="Close Resume Preview">
+            &times;
+          </button>
+        </div>
+      </div>
+      
+      <div class="resume-modal-body">
+        <iframe id="resume-frame" src="resume.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Gowind BM Resume Preview" class="resume-frame" loading="lazy"></iframe>
+        
+        <div class="resume-fallback-bar">
+          <span>Can&apos;t view PDF preview inside browser?</span>
+          <a href="resume.pdf" target="_blank" class="fallback-link">Open PDF in new tab</a>
+          <span class="divider">&bull;</span>
+          <a href="resume.pdf" download="Gowind_BM_Resume.pdf" class="fallback-link">Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -883,6 +992,25 @@
         setTimeout(()=>{document.getElementById('smsg').classList.add('show');n.value='';em.value='';m.value='';b.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';b.disabled=false;},1200);
       }
     });
+
+    // Resume Preview Modal
+    function openResumeModal(){
+      const m=document.getElementById('resume-modal');
+      if(!m)return;
+      m.classList.add('active');
+      document.body.style.overflow='hidden';
+      const f=document.getElementById('resume-frame');
+      if(f&&(!f.getAttribute('src')||f.getAttribute('src')==='about:blank')){
+        f.src='resume.pdf#toolbar=1&navpanes=0&scrollbar=1';
+      }
+    }
+    function closeResumeModal(){
+      const m=document.getElementById('resume-modal');
+      if(!m)return;
+      m.classList.remove('active');
+      document.body.style.overflow='';
+    }
+    window.addEventListener('keydown',e=>{if(e.key==='Escape')closeResumeModal();});
   </script>
 </body>
 </html>

@@ -20,7 +20,7 @@ A modern, responsive, high-performance single-page portfolio website designed wi
 - **Circular Profile Avatar**: Modern circular portrait frame with static positioning and subtle glowing borders.
 - **Projects Showcase**: Deep dives into computer vision and GenAI projects including real-time video surveillance, defect detection, and multimodal LLM agents.
 - **Technical Skills Matrix**: Comprehensive categorization of languages (Python, Java), AI frameworks (Flask, Streamlit, YOLOv8, OpenCV, MediaPipe, Pandas, NumPy, TensorFlow, Keras), Web technologies (React, REST APIs), and automation tools (n8n).
-- **Recruiter & ATS Magic Keywords Cloud**: Instant discovery of core engineering competencies for recruiters and hiring managers.
+- **Engineering Philosophy & In-Browser Resume Preview**: Showcasing an automation-first mindset ("My strength is my laziness") paired with an instant in-browser modal preview and direct download options for the official resume.
 - **Fully Responsive & Accessible**: Optimized for desktops, tablets, and mobile devices with smooth scroll-spy navigation.
 
 ---
@@ -58,7 +58,7 @@ To deploy this portfolio live for free via GitHub Pages:
 
 - **Email**: [gowindbm48@gmail.com](mailto:gowindbm48@gmail.com)
 - **Phone**: [+91 9629088585](tel:+919629088585)
-- **Resume**: [Download Resume (PDF)](resume.pdf)
+- **Resume**: [Preview &amp; Download Resume (PDF)](resume.pdf)
 - **GitHub**: [github.com/gow1n-d](https://github.com/gow1n-d)
 - **LinkedIn**: [linkedin.com/in/gowind-bm](https://www.linkedin.com/in/gowind-bm)
 
