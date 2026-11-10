@@ -11,17 +11,19 @@
 
 ## 🌟 Overview
 
-A modern, responsive, high-performance single-page portfolio website designed with visual excellence, crisp typography, and an emerald green accent. Fully self-contained in a single lightweight `index.html` with zero external dependencies or heavy frontend frameworks.
+A modern, responsive, high-performance single-page portfolio website designed with visual excellence, retro-futuristic skeuomorphism, and an emerald green cyber accent. Fully self-contained in a single lightweight `index.html` with zero external dependencies or heavy frontend frameworks.
 
 ### ✨ Key Features
-- **Curated Design & Visual Polish**: High-contrast, clean light theme with custom emerald green accents (`#16a34a`), smooth rounded cards (`border-radius: 22px`), and pill badges.
-- **Direct PDF Resume Access**: Download or preview the full official resume (`resume.pdf`) directly from the navbar, hero section, and contact card.
+- **The Portfolio Console Hardware Hero**: An interactive skeuomorphic hardware deck with 3D mechanical keycaps, springy bounce physics (`cubic-bezier(.22,1.5,.4,1)`), tactile Web Audio API click feedback, and an idle wave animation.
+- **Dynamic Terminal Screen in Lid**: Real-time monospace terminal display typing out interactive contextual information as you hover/click mechanical keys.
+- **Continuous Credibility Marquee**: Sleek status strip showcasing IIT Jammu research, IJCOT publication, honors degree, and computer vision / GenAI credentials.
+- **Direct PDF Resume Access**: Download or preview the full official resume (`resume.pdf`) directly from the navbar, keycap console, hero section, and contact card.
 - **Hero & Dynamic Typing**: Interactive role cycling (`Machine Learning Engineer`, `Computer Vision Developer`, `Generative AI Developer`, `Data Scientist & AI Specialist`) with immediate recruiter action items.
-- **Circular Profile Avatar**: Modern circular portrait frame with static positioning and subtle glowing borders.
+- **Glowing Profile Avatar**: Modern circular portrait frame with static positioning and pulsing emerald cyber rings.
 - **Projects Showcase**: Deep dives into computer vision and GenAI projects including real-time video surveillance, defect detection in continuous carbon fibre 3D printing, AI research paper generator, and Borrow Booksy.
 - **Technical Skills Matrix**: Comprehensive categorization based on resume: Programming Languages (Python, Java), ML & Deep Learning, Computer Vision (YOLOv8, OpenCV, MediaPipe), Generative AI (LLM Chatbots, AI Agents, MCP), Libraries & Frameworks (TensorFlow, Keras, Pandas, NumPy, Flask, Streamlit), and Databases & Tools (MySQL, MongoDB, Firebase, Git, GitHub, REST APIs, n8n).
 - **Engineering Philosophy & In-Browser Resume Preview**: Showcasing a vibecoding & automation-first mindset ("My strength is my laziness") paired with an instant in-browser modal preview and direct download options for the official resume.
-- **Fully Responsive & Accessible**: Optimized for desktops, tablets, and mobile devices with smooth scroll-spy navigation.
+- **Fully Responsive & Accessible**: Optimized for desktops, tablets, and mobile devices with smooth scroll-spy navigation and `prefers-reduced-motion` compliance.
 
 ---
 
