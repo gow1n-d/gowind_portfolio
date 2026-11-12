@@ -442,14 +442,23 @@
       opacity: 0.9; margin-top: 2px; line-height: 1; text-align: center;
     }
 
-    /* Keycap Hover State */
-    .keycap-anchor:hover .keycap-btn,
+    /* Keycap Hover State (Scoped to pointer devices to avoid sticky touch states on mobile) */
+    @media (hover: hover) {
+      .keycap-anchor:hover .keycap-btn {
+        transform: translateY(-8px);
+        box-shadow: 
+          0 14px 0 var(--key-base),
+          0 22px 28px rgba(0, 0, 0, 0.65),
+          0 0 20px var(--key-glow, rgba(255, 255, 255, 0.25)),
+          inset 0 1px 2px rgba(255, 255, 255, 0.6);
+      }
+    }
     .keycap-anchor:focus-visible .keycap-btn {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
       box-shadow: 
-        0 14px 0 var(--key-base),
-        0 22px 28px rgba(0, 0, 0, 0.65),
-        0 0 20px var(--key-glow, rgba(255, 255, 255, 0.25)),
+        0 8px 0 var(--key-base),
+        0 14px 18px rgba(0, 0, 0, 0.65),
+        0 0 16px var(--key-glow, rgba(255, 255, 255, 0.25)),
         inset 0 1px 2px rgba(255, 255, 255, 0.6);
     }
 
@@ -549,22 +558,6 @@
     .key-return .led-dot {
       width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
       box-shadow: 0 0 8px var(--accent);
-    }
-
-    /* Mobile Quick Chips for Easy Thumb Navigation */
-    .mobile-chips {
-      display: none; gap: 0.45rem; overflow-x: auto; padding: 0.75rem 0.25rem;
-      margin-top: 0.75rem; scrollbar-width: none;
-    }
-    .mobile-chips::-webkit-scrollbar { display: none; }
-    .mchip {
-      font-family: var(--font-m); font-size: 0.72rem; font-weight: 600;
-      color: var(--text); background: var(--bg-card); border: 1px solid var(--border);
-      padding: 0.4rem 0.85rem; border-radius: var(--r-pill); white-space: nowrap;
-      text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;
-    }
-    .mchip:hover, .mchip:active {
-      color: var(--accent); border-color: var(--border-glow);
     }
 
     /* ===== CREDIBILITY TICKER STRIP ===== */
@@ -930,136 +923,6 @@
     .fi.d1 { transition-delay: 0.08s; } .fi.d2 { transition-delay: 0.15s; }
     .fi.d3 { transition-delay: 0.22s; } .fi.d4 { transition-delay: 0.3s; }
 
-    /* ===== MOBILE TACTILE DECK (Optimized for Mobile Touch) ===== */
-    .mobile-tactile-deck {
-      display: none;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-top: 1.1rem;
-      background: linear-gradient(180deg, #121522 0%, #0a0c14 100%);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 0.85rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    }
-    .mtd-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    }
-    .mtd-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: var(--font-m);
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-    }
-    .mtd-led {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 6px var(--accent);
-      animation: pulse 1.5s infinite;
-    }
-    .mtd-hint {
-      font-family: var(--font-m);
-      font-size: 0.58rem;
-      color: var(--text-dim);
-      letter-spacing: 0.04em;
-    }
-    .mtd-grid {
-      display: grid;
-      gap: 0.45rem;
-    }
-    .mtd-grid-5 {
-      grid-template-columns: repeat(5, 1fr);
-    }
-    .mtd-grid-actions {
-      grid-template-columns: repeat(4, 1fr) 1.4fr;
-    }
-    .mtd-btn {
-      min-height: 52px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-      background: var(--mtd-bg);
-      box-shadow: 
-        0 4px 0 var(--mtd-base),
-        0 6px 12px rgba(0, 0, 0, 0.45),
-        inset 0 1px 1px rgba(255, 255, 255, 0.35);
-      position: relative;
-    }
-    .mtd-btn:active,
-    .mtd-btn.active-press {
-      transform: translateY(3px) !important;
-      box-shadow: 
-        0 1px 0 var(--mtd-base) !important,
-        0 2px 4px rgba(0, 0, 0, 0.5) !important;
-    }
-    .mtd-key {
-      font-family: var(--font-h);
-      font-weight: 800;
-      font-size: 0.98rem;
-      line-height: 1;
-      color: var(--mtd-text, #fff);
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-    }
-    .mtd-text {
-      font-family: var(--font-m);
-      font-weight: 700;
-      font-size: 0.52rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--mtd-text, #fff);
-      opacity: 0.9;
-      margin-top: 2px;
-      line-height: 1;
-    }
-
-    /* Tactile Deck Button Colorways matching the hardware */
-    .mtd-p { --mtd-bg: #EC6426; --mtd-base: #AD4017; --mtd-text: #ffffff; }
-    .mtd-o1 { --mtd-bg: #F8A91F; --mtd-base: #BC7512; --mtd-text: #40150E; }
-    .mtd-r { --mtd-bg: #FDE3CF; --mtd-base: #CAA58A; --mtd-text: #40150E; }
-    .mtd-t { --mtd-bg: #2E573A; --mtd-base: #193A23; --mtd-text: #FDE3CF; }
-    .mtd-f { --mtd-bg: #72AC43; --mtd-base: #487A26; --mtd-text: #193A23; }
-    
-    .mtd-auto {
-      --mtd-bg: linear-gradient(135deg, #0284c7, #06b6d4);
-      --mtd-base: #0369a1;
-      --mtd-text: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .mtd-o2 { --mtd-bg: #E4A5CA; --mtd-base: #B76F9B; --mtd-text: #40150E; }
-    .mtd-l { --mtd-bg: #66271B; --mtd-base: #40150E; --mtd-text: #FDE3CF; }
-    .mtd-star { --mtd-bg: #648BA2; --mtd-base: #446377; --mtd-text: #ffffff; }
-    .mtd-return {
-      --mtd-bg: #943823;
-      --mtd-base: #682515;
-      --mtd-text: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .mtd-return .led-dot {
-      display: inline-block; width: 5px; height: 5px; border-radius: 50%;
-      background: #4ade80; box-shadow: 0 0 5px #4ade80; margin-right: 2px;
-    }
-
     /* ===== SKILLS HIGHLIGHT BANNER (AI AUTOMATION) ===== */
     .skills-highlight-banner {
       background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(245, 158, 11, 0.08) 50%, rgba(16, 185, 129, 0.06));
@@ -1153,25 +1016,109 @@
       .hbg { display: flex; align-items: center; }
       .hbtns { flex-direction: column; align-items: center; }
       .btn-p, .btn-o, .btn-g { width: 100%; max-width: 280px; justify-content: center; }
-      .mobile-tactile-deck { display: flex; }
-      .mobile-chips { display: none; }
       .con { padding: 0 1.1rem; }
+      
+      /* Mobile Console Device Refinements */
+      #console .con { padding: 0 0.5rem; }
+      .console-wrapper { padding: 0.2rem 0; width: 100%; max-width: 100%; }
+      .console-device {
+        border-radius: 14px;
+        box-shadow: 
+          0 20px 45px -10px rgba(0, 0, 0, 0.85),
+          0 0 30px -8px rgba(16, 185, 129, 0.18),
+          inset 0 1px 1px rgba(255, 255, 255, 0.12);
+      }
+      .console-screen {
+        padding: 1.6% 2.4%;
+        border-radius: 4px;
+      }
+      .screen-meta {
+        font-size: clamp(0.42rem, 1.7vw, 0.58rem);
+        letter-spacing: 0.03em;
+      }
+      .screen-status-dot { width: 4px; height: 4px; }
+      .screen-title {
+        font-size: clamp(0.72rem, 3vw, 1.05rem);
+        line-height: 1.12;
+        margin: 1px 0;
+      }
+      .screen-cursor { width: 5px; height: 0.9em; }
+      .screen-desc {
+        font-size: clamp(0.42rem, 1.5vw, 0.58rem);
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .keycap-btn {
+        border-radius: clamp(4px, 1.3vw, 8px);
+        box-shadow: 
+          0 3px 0 var(--key-base),
+          0 6px 10px rgba(0, 0, 0, 0.5),
+          inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      }
+      .keycap-btn::before {
+        inset: 1px;
+        border-radius: clamp(3px, 1vw, 6px);
+      }
+      .keycap-anchor:active .keycap-btn {
+        transform: translateY(2px) !important;
+        box-shadow: 0 1px 0 var(--key-base) !important, 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+      }
+      @keyframes keyIdlePopMobile {
+        0%, 82%, 100% { transform: translateY(0); }
+        12% { transform: translateY(-3px); box-shadow: 0 5px 0 var(--key-base), 0 8px 12px rgba(0,0,0,0.5); }
+        22% { transform: translateY(1px); }
+        30% { transform: translateY(-1px); }
+        38% { transform: translateY(0); }
+      }
+      .idle-wave .keycap-btn {
+        animation: keyIdlePopMobile 7s infinite ease-in-out;
+        animation-delay: calc(var(--key-idx) * 85ms);
+      }
+      .key-p .keycap-letter,
+      .key-o1 .keycap-letter,
+      .key-r .keycap-letter,
+      .key-t .keycap-letter,
+      .key-f .keycap-letter {
+        font-size: clamp(0.82rem, 3.2vw, 1.35rem);
+      }
+      .key-p .keycap-sub,
+      .key-o1 .keycap-sub,
+      .key-r .keycap-sub,
+      .key-t .keycap-sub,
+      .key-f .keycap-sub {
+        font-size: clamp(0.32rem, 1.1vw, 0.46rem);
+        letter-spacing: 0;
+        margin-top: 1px;
+      }
+      .key-o2 .keycap-letter,
+      .key-l .keycap-letter,
+      .key-i .keycap-letter,
+      .key-o3 .keycap-letter,
+      .key-star .keycap-letter {
+        font-size: clamp(0.74rem, 2.8vw, 1.15rem);
+      }
+      .key-o2 .keycap-sub,
+      .key-l .keycap-sub,
+      .key-i .keycap-sub,
+      .key-o3 .keycap-sub,
+      .key-star .keycap-sub {
+        display: none !important;
+      }
+      .key-return .keycap-letter {
+        font-size: clamp(0.52rem, 1.8vw, 0.8rem);
+        gap: 0.2rem;
+      }
+      .key-return .led-dot { width: 5px; height: 5px; }
+      .key-return .keycap-sub { display: none !important; }
+      .credibility-strip { margin-top: 1.1rem; padding: 0.5rem 0; font-size: 0.72rem; }
+      
       section { padding: 2.2rem 0; }
       .card { padding: 1.25rem !important; }
       .pdesc { font-size: 0.86rem; line-height: 1.55; }
       .finput, .ftarea { font-size: 16px !important; } /* Prevents iOS Safari auto-zoom */
       .skills-highlight-banner { flex-direction: column; padding: 1.15rem; gap: 0.65rem; }
-      .console-screen { padding: 0.45rem 0.65rem; }
-      .screen-meta { font-size: 0.54rem; }
-      .screen-title { font-size: 0.92rem; line-height: 1.15; }
-      .screen-desc {
-        font-size: 0.62rem;
-        white-space: normal;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
       .resume-modal { padding: 0.5rem; }
       .resume-modal-container { height: 96vh; max-height: none; border-radius: 14px; }
       .resume-modal-header { padding: 0.85rem 1rem; }
@@ -1180,17 +1127,46 @@
     }
     @media(max-width: 480px) {
       .con { padding: 0 0.85rem; }
+      #console .con { padding: 0 0.35rem; }
+      .keycap-sub { display: none !important; }
+      .keycap-btn {
+        border-radius: 5px;
+        box-shadow: 
+          0 2.5px 0 var(--key-base),
+          0 4px 8px rgba(0, 0, 0, 0.5),
+          inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      }
+      .key-p .keycap-letter,
+      .key-o1 .keycap-letter,
+      .key-r .keycap-letter,
+      .key-t .keycap-letter,
+      .key-f .keycap-letter {
+        font-size: clamp(0.85rem, 3.6vw, 1.2rem);
+      }
+      .key-o2 .keycap-letter,
+      .key-l .keycap-letter,
+      .key-i .keycap-letter,
+      .key-o3 .keycap-letter,
+      .key-star .keycap-letter {
+        font-size: clamp(0.76rem, 3.2vw, 1.05rem);
+      }
+      .key-return .keycap-letter {
+        font-size: clamp(0.5rem, 2vw, 0.72rem);
+        gap: 0.18rem;
+      }
+      .key-return .led-dot { width: 4px; height: 4px; }
+      .screen-meta {
+        font-size: clamp(0.38rem, 1.8vw, 0.52rem);
+      }
+      .screen-meta span:first-child {
+        max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      }
+      .screen-title { font-size: clamp(0.64rem, 3vw, 0.88rem); }
+      .screen-desc { font-size: clamp(0.38rem, 1.5vw, 0.52rem); }
       .card { padding: 1.05rem !important; }
       .scards { grid-template-columns: 1fr; }
       .fbar { justify-content: center; gap: 0.35rem; }
       .fbtn { padding: 0.35rem 0.65rem; font-size: 0.72rem; }
-      .mtd-key { font-size: 0.88rem; }
-      .mtd-text { font-size: 0.46rem; }
-      .mtd-btn { min-height: 48px; }
-      .console-screen { padding: 0.35rem 0.5rem; }
-      .screen-meta span:first-child { max-width: 135px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-      .screen-title { font-size: 0.82rem; }
-      .screen-desc { font-size: 0.58rem; line-height: 1.2; }
       .hname { font-size: 2.2rem; }
     }
 
@@ -1370,35 +1346,35 @@
           </div>
 
           <!-- Upper Row of 5 Large Keycaps (P O R T F) -->
-          <div class="keycap-anchor key-p" role="button" tabindex="0" onclick="triggerKeyNav('#projects')" onmouseenter="onKeyHover('p')" onmouseleave="onKeyLeave()" aria-label="Projects Key P">
+          <div class="keycap-anchor key-p" role="button" tabindex="0" onclick="triggerKeyNav('#projects', 'p')" onmouseenter="onKeyHover('p')" onmouseleave="onKeyLeave()" aria-label="Projects Key P">
             <div class="keycap-btn">
               <span class="keycap-letter">P</span>
               <span class="keycap-sub">PROJECTS</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-o1" role="button" tabindex="0" onclick="triggerKeyNav('#about')" onmouseenter="onKeyHover('o1')" onmouseleave="onKeyLeave()" aria-label="About Key O">
+          <div class="keycap-anchor key-o1" role="button" tabindex="0" onclick="triggerKeyNav('#about', 'o1')" onmouseenter="onKeyHover('o1')" onmouseleave="onKeyLeave()" aria-label="About Key O">
             <div class="keycap-btn">
               <span class="keycap-letter">O</span>
               <span class="keycap-sub">ABOUT</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-r" role="button" tabindex="0" onclick="triggerKeyNav('#skills')" onmouseenter="onKeyHover('r')" onmouseleave="onKeyLeave()" aria-label="Skills Key R">
+          <div class="keycap-anchor key-r" role="button" tabindex="0" onclick="triggerKeyNav('#skills', 'r')" onmouseenter="onKeyHover('r')" onmouseleave="onKeyLeave()" aria-label="Skills Key R">
             <div class="keycap-btn">
               <span class="keycap-letter">R</span>
               <span class="keycap-sub">SKILLS</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-t" role="button" tabindex="0" onclick="triggerKeyNav('#experience')" onmouseenter="onKeyHover('t')" onmouseleave="onKeyLeave()" aria-label="Experience Key T">
+          <div class="keycap-anchor key-t" role="button" tabindex="0" onclick="triggerKeyNav('#experience', 't')" onmouseenter="onKeyHover('t')" onmouseleave="onKeyLeave()" aria-label="Experience Key T">
             <div class="keycap-btn">
               <span class="keycap-letter">T</span>
               <span class="keycap-sub">EXPERIENCE</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-f" role="button" tabindex="0" onclick="triggerKeyNav('#achievements')" onmouseenter="onKeyHover('f')" onmouseleave="onKeyLeave()" aria-label="Achievements Key F">
+          <div class="keycap-anchor key-f" role="button" tabindex="0" onclick="triggerKeyNav('#achievements', 'f')" onmouseenter="onKeyHover('f')" onmouseleave="onKeyLeave()" aria-label="Achievements Key F">
             <div class="keycap-btn">
               <span class="keycap-letter">F</span>
               <span class="keycap-sub">RESEARCH</span>
@@ -1406,28 +1382,28 @@
           </div>
 
           <!-- Lower Row of Keys (O L I O ★ and LET'S TALK) -->
-          <div class="keycap-anchor key-o2" role="button" tabindex="0" onclick="triggerKeyFilter('cv')" onmouseenter="onKeyHover('o2')" onmouseleave="onKeyLeave()" aria-label="Computer Vision Key O">
+          <div class="keycap-anchor key-o2" role="button" tabindex="0" onclick="triggerKeyFilter('cv', 'o2')" onmouseenter="onKeyHover('o2')" onmouseleave="onKeyLeave()" aria-label="Computer Vision Key O">
             <div class="keycap-btn">
               <span class="keycap-letter">O</span>
               <span class="keycap-sub">CV/ML</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-l" role="button" tabindex="0" onclick="triggerKeyFilter('genai')" onmouseenter="onKeyHover('l')" onmouseleave="onKeyLeave()" aria-label="GenAI Key L">
+          <div class="keycap-anchor key-l" role="button" tabindex="0" onclick="triggerKeyFilter('genai', 'l')" onmouseenter="onKeyHover('l')" onmouseleave="onKeyLeave()" aria-label="GenAI Key L">
             <div class="keycap-btn">
               <span class="keycap-letter">L</span>
               <span class="keycap-sub">GENAI</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-i" role="button" tabindex="0" onclick="triggerKeyNav('#education')" onmouseenter="onKeyHover('i')" onmouseleave="onKeyLeave()" aria-label="Education Key I">
+          <div class="keycap-anchor key-i" role="button" tabindex="0" onclick="triggerKeyNav('#education', 'i')" onmouseenter="onKeyHover('i')" onmouseleave="onKeyLeave()" aria-label="Education Key I">
             <div class="keycap-btn">
               <span class="keycap-letter">I</span>
               <span class="keycap-sub">ACADEMIC</span>
             </div>
           </div>
 
-          <div class="keycap-anchor key-o3" role="button" tabindex="0" onclick="triggerKeyNav('#philosophy')" onmouseenter="onKeyHover('o3')" onmouseleave="onKeyLeave()" aria-label="Philosophy Key O">
+          <div class="keycap-anchor key-o3" role="button" tabindex="0" onclick="triggerKeyNav('#philosophy', 'o3')" onmouseenter="onKeyHover('o3')" onmouseleave="onKeyLeave()" aria-label="Philosophy Key O">
             <div class="keycap-btn">
               <span class="keycap-letter">O</span>
               <span class="keycap-sub">ETHOS</span>
@@ -1441,70 +1417,11 @@
             </div>
           </div>
 
-          <div class="keycap-anchor key-return" role="button" tabindex="0" onclick="triggerKeyNav('#contact')" onmouseenter="onKeyHover('return')" onmouseleave="onKeyLeave()" aria-label="Contact Return Key">
+          <div class="keycap-anchor key-return" role="button" tabindex="0" onclick="triggerKeyNav('#contact', 'return')" onmouseenter="onKeyHover('return')" onmouseleave="onKeyLeave()" aria-label="Contact Return Key">
             <div class="keycap-btn">
               <span class="keycap-letter"><span class="led-dot"></span> LET&apos;S TALK &crarr;</span>
               <span class="keycap-sub">AVAILABLE FOR HIRE</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Mobile Tactile Control Deck (Optimized for Mobile Touch) -->
-        <div class="mobile-tactile-deck" role="region" aria-label="Mobile Console Controller">
-          <div class="mtd-header">
-            <div class="mtd-label">
-              <span class="mtd-led"></span>
-              <span>TACTILE DECK &bull; TOUCH ACTIVE</span>
-            </div>
-            <span class="mtd-hint">TAP KEYS TO ENGAGE</span>
-          </div>
-          
-          <!-- Row 1: Primary Navigation Keys (P, O, R, T, F) -->
-          <div class="mtd-grid mtd-grid-5">
-            <button type="button" class="mtd-btn mtd-p" onclick="handleMtdClick('p', '#projects')" aria-label="Projects">
-              <span class="mtd-key">P</span>
-              <span class="mtd-text">PROJECTS</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-o1" onclick="handleMtdClick('o1', '#about')" aria-label="About">
-              <span class="mtd-key">O</span>
-              <span class="mtd-text">ABOUT</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-r" onclick="handleMtdClick('r', '#skills')" aria-label="Skills">
-              <span class="mtd-key">R</span>
-              <span class="mtd-text">SKILLS</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-t" onclick="handleMtdClick('t', '#experience')" aria-label="Journey">
-              <span class="mtd-key">T</span>
-              <span class="mtd-text">CAREER</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-f" onclick="handleMtdClick('f', '#achievements')" aria-label="Research">
-              <span class="mtd-key">F</span>
-              <span class="mtd-text">HONORS</span>
-            </button>
-          </div>
-
-          <!-- Row 2: Capabilities & Actions (⚡ AUTO, CV, GENAI, RESUME, LET'S TALK) -->
-          <div class="mtd-grid mtd-grid-actions">
-            <button type="button" class="mtd-btn mtd-auto" onclick="handleMtdFilter('automation')" aria-label="Filter AI Automation">
-              <span class="mtd-key">&#x26A1;</span>
-              <span class="mtd-text">AUTO</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-o2" onclick="handleMtdFilter('cv')" aria-label="Filter Computer Vision">
-              <span class="mtd-key">O</span>
-              <span class="mtd-text">CV/ML</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-l" onclick="handleMtdFilter('genai')" aria-label="Filter GenAI">
-              <span class="mtd-key">L</span>
-              <span class="mtd-text">GENAI</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-star" onclick="handleMtdResume()" aria-label="Official Resume">
-              <span class="mtd-key">&#x2605;</span>
-              <span class="mtd-text">RESUME</span>
-            </button>
-            <button type="button" class="mtd-btn mtd-return" onclick="handleMtdClick('return', '#contact')" aria-label="Contact">
-              <span class="mtd-key"><span class="led-dot"></span> TALK</span>
-              <span class="mtd-text">&crarr; HIRE</span>
-            </button>
           </div>
         </div>
 
@@ -2343,46 +2260,33 @@
       }, 350);
     }
 
-    function triggerKeyNav(targetSelector) {
+    function triggerKeyNav(targetSelector, key) {
+      if(key) updateConsoleScreen(key);
       playKeyClick(420);
       const el = document.querySelector(targetSelector);
-      if(el) el.scrollIntoView({behavior: 'smooth'});
+      if(el) {
+        setTimeout(() => {
+          el.scrollIntoView({behavior: 'smooth'});
+        }, 220);
+      }
     }
 
-    function triggerKeyFilter(cat) {
+    function triggerKeyFilter(cat, key) {
+      if(key) updateConsoleScreen(key);
       playKeyClick(480);
       const projSec = document.getElementById('projects');
-      if(projSec) projSec.scrollIntoView({behavior: 'smooth'});
+      if(projSec) {
+        setTimeout(() => {
+          projSec.scrollIntoView({behavior: 'smooth'});
+        }, 220);
+      }
       const btn = document.getElementById('f-' + cat);
       if(btn) filterP(cat, btn);
     }
 
     function triggerKeyResume() {
-      playKeyClick(620);
-      openResumeModal();
-    }
-
-    // Mobile Tactile Deck Click Handlers
-    function handleMtdClick(key, targetSelector) {
-      playKeyClick(520);
-      updateConsoleScreen(key);
-      const el = document.querySelector(targetSelector);
-      if(el) el.scrollIntoView({behavior: 'smooth'});
-    }
-
-    function handleMtdFilter(cat) {
-      playKeyClick(480);
-      const keyMap = { automation: 'automation', cv: 'o2', genai: 'l' };
-      updateConsoleScreen(keyMap[cat] || 'p');
-      const projSec = document.getElementById('projects');
-      if(projSec) projSec.scrollIntoView({behavior: 'smooth'});
-      const btn = document.getElementById('f-' + cat);
-      if(btn) filterP(cat, btn);
-    }
-
-    function handleMtdResume() {
-      playKeyClick(620);
       updateConsoleScreen('star');
+      playKeyClick(620);
       openResumeModal();
     }
 
